@@ -1,7 +1,7 @@
 def problem1(arr,target):
     for i,v in enumerate(arr):
         for j,w in enumerate(arr):
-            if v+w==target:
+            if v+w == target:
                 return [i,j]
 nums = [2,7,11,15]
 target = 9
@@ -19,17 +19,13 @@ def roman_int(s:str)->int:
     r = 0
 
     for i,v in enumerate(s):
-        if v in keys and i+1 < len(s) and s[i+1] in keys:
-            n = keys[s[i+1]]
-            g = keys[v]
-             
-            if g<n:
-                r -= g
-            else:
-                r += g
-        else:
+        roman_special_rules = v in keys and i+1 < len(s) and s[i+1] in keys
+        if not roman_special_rules:
             r += keys[v]
-         
+            continue
+        n = keys[s[i+1]]
+        g = keys[v]
+        r = r - g if g<n else r + g
     return r
         
         
