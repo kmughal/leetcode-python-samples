@@ -1,3 +1,6 @@
+from typing import List
+
+
 def problem1(arr,target):
     for i,v in enumerate(arr):
         for j,w in enumerate(arr):
@@ -7,12 +10,11 @@ nums = [2,7,11,15]
 target = 9
 # print(problem1(nums,target))
 
-def problem2(x:int)-> str:
+def isPalindrome(x:int)-> str:
     to_str = str(x)
     return to_str == to_str[::-1]
 
-# print(problem2(121))
-
+ 
 
 def roman_int(s:str)->int:
     keys = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
@@ -30,5 +32,41 @@ def roman_int(s:str)->int:
         
         
         
-print(roman_int('MCMXCIV'))
-print(roman_int('IV'))
+
+def longestCommonPrefix(strs: List[str]) -> str:
+    common = ''
+    for v in strs[0]:
+        common += v
+        for i in range(1,len(strs)):
+            if strs[i].startswith(common) == False:
+               return common[:-1]
+    return common
+
+
+def is_valid_brackets(s):
+    stack = []
+    bracket_map = {"(": ")", "[": "]", "{": "}"}
+
+    for char in s:
+        if char in bracket_map:
+            stack.append(char)
+        elif not stack or bracket_map[stack.pop()] != char:
+            return False
+
+    return not stack
+
+
+
+def removeDuplicates(nums: List[int]) -> int:
+    if not nums:
+        return 0
+
+    i = 0
+    for j in range(1, len(nums)):
+        if nums[j] != nums[i]:
+            i += 1
+            nums[i] = nums[j]
+
+    return i + 1
+    
+print(removeDuplicates([1,1,2]))
