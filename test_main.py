@@ -40,5 +40,13 @@ class LeetCodeTests(unittest.TestCase):
         self.assertEqual(5, removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
         self.assertEqual(1, removeDuplicates([1]))
         self.assertEqual(0, removeDuplicates([]))
+        
+    def test_longestPalindrome(self):
+        self.assertEqual('bab', longestPalindrome('babad'))
+        self.assertEqual('bb', longestPalindrome('cbbd'))
+        self.assertEqual('a', longestPalindrome('a'))
+        self.assertEqual('a', longestPalindrome('ac'))
+        self.assertEqual('a', longestPalindrome('abcda'))
+        self.assertEqual('aa', longestPalindrome('aacdefcaa'))
 if __name__ == '__main__':
     unittest.main()

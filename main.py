@@ -69,4 +69,25 @@ def removeDuplicates(nums: List[int]) -> int:
 
     return i + 1
     
-print(removeDuplicates([1,1,2]))
+def longestPalindrome(s: str) -> str:
+    if len(s) == 1:
+        return s
+
+    n = len(s)
+    longest_len = 1
+    start = 0
+    dp = [[False] * n for _ in range(n)]
+
+    for j in range(1, n):
+        for i in range(j):
+            if s[i] == s[j] and (j - i <= 2 or dp[i + 1][j - 1]):
+                dp[i][j] = True
+                if j - i + 1 > longest_len:
+                    longest_len = j - i + 1
+                    start = i
+
+    return s[start:start + longest_len]
+
+s1 = "civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth"
+        
+print(longestPalindrome(s1))
