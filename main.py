@@ -122,3 +122,9 @@ def searchInsert(nums:List[int],tt:int) -> int:
         if nums[j] < tt:
             i += 1
     return i
+
+def lengthOfLastWord( s: str) -> int:
+    c = s.split(' ')
+    l = filter(lambda x: x != '', c)
+    gg = list(l)
+    return len(gg[-1]) if len(gg) > 0 else 0

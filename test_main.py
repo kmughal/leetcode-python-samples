@@ -80,5 +80,11 @@ class LeetCodeTests(unittest.TestCase):
         self.assertEqual(0, searchInsert([1,3,5,6],0))
         self.assertEqual(0, searchInsert([1],0))
         self.assertEqual(1, searchInsert([1],2))
+        
+    def test_lengthOfLastWord(self):
+        self.assertEqual(5, lengthOfLastWord('Hello World'))
+        self.assertEqual(0, lengthOfLastWord(' '))
+        self.assertEqual(0, lengthOfLastWord('  '))
+        
 if __name__ == '__main__':
     unittest.main()
