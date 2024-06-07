@@ -114,3 +114,11 @@ def strStr(haystack: str, needle: str) -> int:
         return haystack.index(needle)
     except:
         return -1
+    
+    
+def searchInsert(nums:List[int],tt:int) -> int:
+    i = 0
+    for j in range(len(nums)):
+        if nums[j] < tt:
+            i += 1
+    return i

@@ -73,5 +73,12 @@ class LeetCodeTests(unittest.TestCase):
         self.assertEqual(-1, strStr('mississippi','issipi'))
         self.assertEqual(4, strStr('mississippi','issip'))
         
+    def test_searchInsert(self):
+        self.assertEqual(2, searchInsert([1,3,5,6],5))
+        self.assertEqual(1, searchInsert([1,3,5,6],2))
+        self.assertEqual(4, searchInsert([1,3,5,6],7))
+        self.assertEqual(0, searchInsert([1,3,5,6],0))
+        self.assertEqual(0, searchInsert([1],0))
+        self.assertEqual(1, searchInsert([1],2))
 if __name__ == '__main__':
     unittest.main()
