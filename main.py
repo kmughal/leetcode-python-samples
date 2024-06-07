@@ -107,3 +107,10 @@ def removeElement(nums: List[int], val: int) -> int:
             nums[i] = nums[j]
             i += 1
     return i
+
+
+def strStr(haystack: str, needle: str) -> int:
+    try:
+        return haystack.index(needle)
+    except:
+        return -1

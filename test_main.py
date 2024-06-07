@@ -64,5 +64,14 @@ class LeetCodeTests(unittest.TestCase):
         self.assertEqual(0, removeElement([],0))
         self.assertEqual(0, removeElement([1],1))
         self.assertEqual(1, removeElement([1],2))
+        
+        
+    def test_strStr(self):
+        self.assertEqual(2, strStr('hello','ll'))
+        self.assertEqual(-1, strStr('aaaaa','bba'))
+        self.assertEqual(0, strStr('',''))
+        self.assertEqual(-1, strStr('mississippi','issipi'))
+        self.assertEqual(4, strStr('mississippi','issip'))
+        
 if __name__ == '__main__':
     unittest.main()
