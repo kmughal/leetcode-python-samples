@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 
 def problem1(arr,target):
@@ -97,3 +97,13 @@ def findMedianSortedArrays(nums1,nums2):
     middle = len(c) // 2
     ans = ((c[middle] + c[middle-1]) / 2) if len(c) % 2 == 0 else (c[middle])
     return ans
+
+
+ 
+def removeElement(nums: List[int], val: int) -> int:
+    i = 0
+    for j in range(len(nums)):
+        if nums[j] != val:
+            nums[i] = nums[j]
+            i += 1
+    return i

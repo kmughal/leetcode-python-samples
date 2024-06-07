@@ -57,6 +57,12 @@ class LeetCodeTests(unittest.TestCase):
         self.assertEqual(1.0, findMedianSortedArrays([],[1]))
         self.assertEqual(2.0, findMedianSortedArrays([2],[]))
         self.assertEqual(1.0, findMedianSortedArrays([1,1],[1,2]))
-        
+
+    def test_removeElement(self):
+        self.assertEqual(2, removeElement([3,2,2,3],3))
+        self.assertEqual(5, removeElement([0,1,2,2,3,0,4,2],2))
+        self.assertEqual(0, removeElement([],0))
+        self.assertEqual(0, removeElement([1],1))
+        self.assertEqual(1, removeElement([1],2))
 if __name__ == '__main__':
     unittest.main()
