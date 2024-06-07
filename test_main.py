@@ -48,5 +48,15 @@ class LeetCodeTests(unittest.TestCase):
         self.assertEqual('a', longestPalindrome('ac'))
         self.assertEqual('a', longestPalindrome('abcda'))
         self.assertEqual('aa', longestPalindrome('aacdefcaa'))
+        
+        
+    def test_findMedianSortedArrays(self):
+        self.assertEqual(2.0, findMedianSortedArrays([1,3],[2]))
+        self.assertEqual(2.5, findMedianSortedArrays([1,2],[3,4]))
+        self.assertEqual(0.0, findMedianSortedArrays([0,0],[0,0]))
+        self.assertEqual(1.0, findMedianSortedArrays([],[1]))
+        self.assertEqual(2.0, findMedianSortedArrays([2],[]))
+        self.assertEqual(1.0, findMedianSortedArrays([1,1],[1,2]))
+        
 if __name__ == '__main__':
     unittest.main()
