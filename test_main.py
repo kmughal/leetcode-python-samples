@@ -85,6 +85,13 @@ class LeetCodeTests(unittest.TestCase):
         self.assertEqual(5, lengthOfLastWord('Hello World'))
         self.assertEqual(0, lengthOfLastWord(' '))
         self.assertEqual(0, lengthOfLastWord('  '))
+
+    def test_plusOne(self):
+        self.assertEqual([1,2,4], plusOne([1,2,3]))
+        self.assertEqual([4,3,2,2], plusOne([4,3,2,1]))
+        self.assertEqual([1], plusOne([0]))
+        self.assertEqual([1,0], plusOne([9]))
+        self.assertEqual([1,0,0], plusOne([9,9]))
         
 if __name__ == '__main__':
     unittest.main()
