@@ -128,3 +128,14 @@ def lengthOfLastWord( s: str) -> int:
     l = filter(lambda x: x != '', c)
     gg = list(l)
     return len(gg[-1]) if len(gg) > 0 else 0
+
+def plusOne(input: List[int]) -> List[int]:
+    d = input[::-1]
+    carry = 1
+    for i in range(len(d)):
+        d[i] += carry
+        carry = d[i] // 10
+        d[i] %= 10
+    if carry:
+        d.append(1)
+    return d[::-1]
