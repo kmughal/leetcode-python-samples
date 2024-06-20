@@ -139,3 +139,24 @@ def plusOne(input: List[int]) -> List[int]:
     if carry:
         d.append(1)
     return d[::-1]
+
+def addBinary(num1: str, num2: str) -> str:
+    l = max(len(num1), len(num2))
+    p = 0
+    r = ''
+    num1 = num1.zfill(l)
+    num2 = num2.zfill(l)
+    
+    for i in range(l - 1, -1, -1):
+        a = int(num1[i])
+        b = int(num2[i])
+        
+        t = a + b + p
+        q = t % 2  
+        p = t // 2  
+        r = str(q) + r  
+
+    if p == 1:
+        r = f'1{r}'
+
+    return r      

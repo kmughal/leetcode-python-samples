@@ -92,6 +92,12 @@ class LeetCodeTests(unittest.TestCase):
         self.assertEqual([1], plusOne([0]))
         self.assertEqual([1,0], plusOne([9]))
         self.assertEqual([1,0,0], plusOne([9,9]))
-        
+
+    def test_addBinary(self):
+        self.assertEqual('100', addBinary('11','1'))
+        self.assertEqual('10101', addBinary('1010','1011'))
+        self.assertEqual('0', addBinary('0','0'))
+        self.assertEqual('1', addBinary('1','0'))
+        self.assertEqual('100', addBinary('11','1'))    
 if __name__ == '__main__':
     unittest.main()
