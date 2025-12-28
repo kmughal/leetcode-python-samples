@@ -159,4 +159,44 @@ def addBinary(num1: str, num2: str) -> str:
     if p == 1:
         r = f'1{r}'
 
-    return r      
+    return r
+
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class AddLinkLists:
+    def append(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        if head is None:
+            return ListNode(val)
+        
+        current = head 
+        while current.next:
+            current = current.next 
+        current.next = ListNode(val)
+        return head
+    
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        x1 = l1
+        x2 = l2
+        r:Optional[ListNode] = None
+        carry = 0
+        print(f"Initial values: {x1}, {x2}")
+        while x1 or x2:
+            a = x1.val if x1 else 0
+            b = x2.val if x2 else 0
+            total = a + b + carry
+            if total < 10:
+                r = self.append(r, total)
+                carry = 0
+            else:
+                r = self.append(r, total % 10)
+                carry = total // 10
+            
+            x1 = x1.next if x1 else 0
+            x2 = x2.next if x2 else 0
+        if carry > 0:
+            r = self.append(r, carry)
+        return r

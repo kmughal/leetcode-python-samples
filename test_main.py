@@ -1,5 +1,6 @@
 import unittest
 from main import *
+
 class LeetCodeTests(unittest.TestCase):
     
     
@@ -98,6 +99,18 @@ class LeetCodeTests(unittest.TestCase):
         self.assertEqual('10101', addBinary('1010','1011'))
         self.assertEqual('0', addBinary('0','0'))
         self.assertEqual('1', addBinary('1','0'))
-        self.assertEqual('100', addBinary('11','1'))    
+        self.assertEqual('100', addBinary('11','1'))
+
+    def test_add_link_lists(self):
+        s = AddLinkLists()
+        l1 = ListNode(2, ListNode(4, ListNode(3)))
+        l2 = ListNode(5, ListNode(6, ListNode(4)))
+        result = s.addTwoNumbers(l1, l2)
+
+        self.assertEqual(7, result.val)
+        self.assertEqual(0, result.next.val)
+        self.assertEqual(8, result.next.next.val)
+        self.assertIsNone(result.next.next.next)
+
 if __name__ == '__main__':
     unittest.main()
